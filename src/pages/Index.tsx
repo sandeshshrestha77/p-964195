@@ -1,29 +1,37 @@
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { Trophy, MapPin, Target, Compass } from "lucide-react"
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
       {/* Header Section */}
-      <header className="relative bg-white py-6">
+      <header className="relative bg-[#F2FCE2] py-6">
         <div className="container mx-auto px-4">
           <nav className="flex items-center justify-between">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true"
-              alt="Logo"
-              className="h-8 w-auto"
-            />
+            <div className="flex items-center space-x-2">
+              <Trophy className="h-8 w-8 text-[#8B5CF6]" />
+              <span className="text-xl font-bold text-gray-900">Sikkim Rising Star</span>
+            </div>
             <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-gray-600 hover:text-gray-900">About us</a>
-              <a href="#events" className="text-gray-600 hover:text-gray-900">Events</a>
-              <a href="#pricing" className="text-gray-600 hover:text-gray-900">Pricing</a>
-              <a href="#blog" className="text-gray-600 hover:text-gray-900">Blog</a>
+              <a href="#about" className="text-gray-600 hover:text-[#8B5CF6]">About</a>
+              <a href="#events" className="text-gray-600 hover:text-[#8B5CF6]">Events</a>
+              <a href="#leaderboard" className="text-gray-600 hover:text-[#8B5CF6]">Leaderboard</a>
+              <a href="#register" className="text-gray-600 hover:text-[#8B5CF6]">Register</a>
             </div>
           </nav>
           <div className="mt-16 text-center">
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900">
-              Website heading goes here
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
+              Discover Sikkim's Hidden Treasures
             </h1>
+            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+              Join the ultimate treasure hunt competition that challenges your wit and explores the beauty of Sikkim since 2018.
+            </p>
+            <div className="flex justify-center gap-4">
+              <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED]">Register Now</Button>
+              <Button variant="outline">Learn More</Button>
+            </div>
           </div>
         </div>
       </header>
@@ -34,20 +42,23 @@ const Index = () => {
           {/* Feature 1 */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div>
-              <h2 className="text-3xl font-bold mb-4">Feature name</h2>
+              <div className="flex items-center gap-2 mb-4">
+                <MapPin className="h-6 w-6 text-[#8B5CF6]" />
+                <h2 className="text-3xl font-bold">Explore Sacred Locations</h2>
+              </div>
               <p className="text-gray-600 mb-8">
-                Do consectetur proident proident id eiusmod deserunt consequat
-                pariatur ad ex velit do Lorem reprehenderit.
+                Embark on an adventure through Sikkim's most mystical and sacred locations. 
+                Each hunt leads you to discover hidden gems while learning about our rich cultural heritage.
               </p>
               <div className="flex space-x-4">
-                <Button>Try now</Button>
-                <Button variant="outline">Learn more</Button>
+                <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED]">Join Hunt</Button>
+                <Button variant="outline">View Locations</Button>
               </div>
             </div>
             <div className="relative">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/9eddbfaafd978d0f56682813e3db91701e526c4b40fb9e974d7545f7e4562ad1?placeholderIfAbsent=true"
-                alt="Feature illustration"
+                src="https://images.unsplash.com/photo-1501854140801-50d01698950b"
+                alt="Sikkim Mountains"
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -56,20 +67,23 @@ const Index = () => {
           {/* Feature 2 */}
           <div className="grid md:grid-cols-2 gap-12 items-center mb-20">
             <div className="md:order-2">
-              <h2 className="text-3xl font-bold mb-4">Feature name</h2>
+              <div className="flex items-center gap-2 mb-4">
+                <Target className="h-6 w-6 text-[#8B5CF6]" />
+                <h2 className="text-3xl font-bold">Solve Complex Riddles</h2>
+              </div>
               <p className="text-gray-600 mb-8">
-                Do consectetur proident proident id eiusmod deserunt consequat
-                pariatur ad ex velit do Lorem reprehenderit.
+                Test your problem-solving skills with our carefully crafted riddles 
+                that combine local knowledge, history, and modern technology.
               </p>
               <div className="flex space-x-4">
-                <Button>Try now</Button>
-                <Button variant="outline">Learn more</Button>
+                <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED]">Try Sample Riddles</Button>
+                <Button variant="outline">Learn More</Button>
               </div>
             </div>
             <div className="md:order-1">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b579f5c6b5323ec84dd7befc85056971d5c056edd2e61a573bfc28c86c1e8b05?placeholderIfAbsent=true"
-                alt="Feature illustration"
+                src="https://images.unsplash.com/photo-1615729947596-a598e5de0ab3"
+                alt="Mountain Riddle Location"
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -78,20 +92,23 @@ const Index = () => {
           {/* Feature 3 */}
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-3xl font-bold mb-4">Feature name</h2>
+              <div className="flex items-center gap-2 mb-4">
+                <Compass className="h-6 w-6 text-[#8B5CF6]" />
+                <h2 className="text-3xl font-bold">Win Amazing Prizes</h2>
+              </div>
               <p className="text-gray-600 mb-8">
-                Do consectetur proident proident id eiusmod deserunt consequat
-                pariatur ad ex velit do Lorem reprehenderit.
+                Compete for prestigious awards and prizes while making unforgettable 
+                memories exploring the breathtaking landscapes of Sikkim.
               </p>
               <div className="flex space-x-4">
-                <Button>Try now</Button>
-                <Button variant="outline">Learn more</Button>
+                <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED]">View Prizes</Button>
+                <Button variant="outline">Past Winners</Button>
               </div>
             </div>
             <div>
               <img
-                src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/865feb173212241cabdb42a15965543b8e96e1e150f7272ceee483d4fe4e3b4e?placeholderIfAbsent=true"
-                alt="Feature illustration"
+                src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
+                alt="Prize Ceremony"
                 className="w-full rounded-lg shadow-lg"
               />
             </div>
@@ -100,13 +117,13 @@ const Index = () => {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F2FCE2]">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">From the people</h2>
+            <h2 className="text-3xl font-bold mb-4">Hunter Stories</h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              We love hearing from our customers! You're the reason we're here
-              and the reason we do what we do.
+              Hear from our past participants about their thrilling experiences and adventures
+              during the Sikkim Rising Star competition.
             </p>
           </div>
 
@@ -114,20 +131,18 @@ const Index = () => {
             <div className="bg-white rounded-lg shadow-lg p-8 mb-8">
               <div className="flex items-start gap-8">
                 <img
-                  src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/b97f030bd396620749ff37f637e38b3615f204ee599c5750c955ed4b011e2608?placeholderIfAbsent=true"
-                  alt="Customer"
-                  className="w-16 h-16 rounded-full"
+                  src="https://images.unsplash.com/photo-1472396961693-142e6e269027"
+                  alt="Past Winner"
+                  className="w-16 h-16 rounded-full object-cover"
                 />
                 <div>
                   <p className="text-gray-600 mb-4">
-                    The ring itself is stunning, with a beautiful design that
-                    catches the light and sparkles from every angle. The quality
-                    of the materials used is evident, as the ring feels
-                    substantial and durable. The gemstone is exquisite, with a
-                    vibrant color and exceptional clarity.
+                    "Participating in Sikkim Rising Star was an incredible journey. The riddles 
+                    challenged my mind while the locations took my breath away. It's more than 
+                    just a competition - it's an adventure that connects you with Sikkim's soul."
                   </p>
-                  <h3 className="font-bold">Anna Fernandez</h3>
-                  <p className="text-gray-500">USA</p>
+                  <h3 className="font-bold">Karma Tshering</h3>
+                  <p className="text-gray-500">2022 Winner</p>
                 </div>
               </div>
             </div>
@@ -135,38 +150,45 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Brands Section */}
+      {/* Stats Section */}
       <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">
-            Loved by Product-led Teams
+            5 Years of Adventure
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-5 gap-8 items-center">
-            {[1, 2, 3, 4, 5].map((index) => (
-              <div key={index} className="flex justify-center">
-                <img
-                  src={`URL_${index + 11}`}
-                  alt={`Brand logo ${index}`}
-                  className="h-8 object-contain"
-                />
-              </div>
-            ))}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+            <div className="text-center">
+              <p className="text-4xl font-bold text-[#8B5CF6] mb-2">1000+</p>
+              <p className="text-gray-600">Participants</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-[#8B5CF6] mb-2">50+</p>
+              <p className="text-gray-600">Locations</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-[#8B5CF6] mb-2">₹5L+</p>
+              <p className="text-gray-600">Prize Pool</p>
+            </div>
+            <div className="text-center">
+              <p className="text-4xl font-bold text-[#8B5CF6] mb-2">100+</p>
+              <p className="text-gray-600">Riddles</p>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Newsletter Section */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#F2FCE2]">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-4">Looking for something</h2>
-          <p className="text-xl mb-8">Subscribe to our newsletter</p>
+          <h2 className="text-3xl font-bold mb-4">Stay Updated</h2>
+          <p className="text-xl mb-8">Get the latest updates about upcoming hunts and events</p>
           <div className="max-w-md mx-auto flex gap-4">
             <Input
               type="email"
-              placeholder="Your email address"
+              placeholder="Enter your email"
               className="flex-1"
             />
-            <Button>Subscribe</Button>
+            <Button className="bg-[#8B5CF6] hover:bg-[#7C3AED]">Subscribe</Button>
           </div>
         </div>
       </section>
@@ -175,20 +197,19 @@ const Index = () => {
       <footer className="bg-white py-12">
         <div className="container mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-center mb-8">
-            <img
-              src="https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=100 100w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=200 200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=400 400w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=800 800w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/068612288de14b679bb19d087dcdd69c/2cd1699fb70d821508fb804f8b47d2ff0bbc80901c21646271842332dcf65f3c?placeholderIfAbsent=true"
-              alt="Logo"
-              className="h-8 w-auto mb-4 md:mb-0"
-            />
+            <div className="flex items-center space-x-2 mb-4 md:mb-0">
+              <Trophy className="h-8 w-8 text-[#8B5CF6]" />
+              <span className="text-xl font-bold">Sikkim Rising Star</span>
+            </div>
             <nav className="flex space-x-8">
-              <a href="#privacy" className="text-gray-600 hover:text-gray-900">Privacy</a>
-              <a href="#terms" className="text-gray-600 hover:text-gray-900">Terms</a>
-              <a href="#help" className="text-gray-600 hover:text-gray-900">Help</a>
-              <a href="#devices" className="text-gray-600 hover:text-gray-900">Devices</a>
+              <a href="#privacy" className="text-gray-600 hover:text-[#8B5CF6]">Privacy</a>
+              <a href="#terms" className="text-gray-600 hover:text-[#8B5CF6]">Terms</a>
+              <a href="#contact" className="text-gray-600 hover:text-[#8B5CF6]">Contact</a>
+              <a href="#faq" className="text-gray-600 hover:text-[#8B5CF6]">FAQ</a>
             </nav>
           </div>
           <div className="text-center text-gray-600">
-            <p>© PlayCine Media Direct, LLC. All rights reserved</p>
+            <p>© 2018-2024 Sikkim Rising Star. All rights reserved</p>
           </div>
         </div>
       </footer>
