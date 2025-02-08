@@ -3,9 +3,10 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { ChevronRight, Activity, Users, Globe, Send, Menu, X } from "lucide-react"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 const Index = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   return (
     <div className="min-h-screen bg-white">
@@ -13,16 +14,19 @@ const Index = () => {
       <nav className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            <span className="text-xl font-semibold text-gray-900">Sikkim Rising Star</span>
+            <Link to="/" className="text-xl font-semibold text-gray-900">
+              Sikkim Rising Star
+            </Link>
             
             {/* Desktop Menu */}
             <div className="hidden md:flex space-x-8">
-              <a href="#about" className="text-gray-600 hover:text-gray-900 transition-colors">About</a>
-              <a href="#features" className="text-gray-600 hover:text-gray-900 transition-colors">Features</a>
-              <a href="#events" className="text-gray-600 hover:text-gray-900 transition-colors">Events</a>
-              <Button variant="default" className="bg-blue-600 hover:bg-blue-700">
-                Register Now
-              </Button>
+              <Link to="/about" className="text-gray-600 hover:text-gray-900 transition-colors">About</Link>
+              <Link to="/events" className="text-gray-600 hover:text-gray-900 transition-colors">Events</Link>
+              <Link to="/register">
+                <Button variant="default" className="bg-blue-600 hover:bg-blue-700">
+                  Register Now
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile Menu Button */}
@@ -43,12 +47,13 @@ const Index = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t">
             <div className="container mx-auto px-4 py-4 space-y-4">
-              <a href="#about" className="block text-gray-600 hover:text-gray-900">About</a>
-              <a href="#features" className="block text-gray-600 hover:text-gray-900">Features</a>
-              <a href="#events" className="block text-gray-600 hover:text-gray-900">Events</a>
-              <Button variant="default" className="w-full bg-blue-600 hover:bg-blue-700">
-                Register Now
-              </Button>
+              <Link to="/about" className="block text-gray-600 hover:text-gray-900">About</Link>
+              <Link to="/events" className="block text-gray-600 hover:text-gray-900">Events</Link>
+              <Link to="/register">
+                <Button variant="default" className="w-full bg-blue-600 hover:bg-blue-700">
+                  Register Now
+                </Button>
+              </Link>
             </div>
           </div>
         )}
@@ -178,7 +183,7 @@ const Index = () => {
         </div>
       </footer>
     </div>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
