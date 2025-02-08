@@ -1,14 +1,15 @@
-
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
-    event: "mountain-trek"
+    event: "season-4"
   })
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -19,10 +20,12 @@ const Register = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+      
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-2xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Register for Event</h1>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Register for Season 4</h1>
             
             <div className="bg-white border rounded-xl p-8 shadow-sm">
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -79,19 +82,24 @@ const Register = () => {
                     className="w-full h-10 px-3 border border-gray-300 rounded-md"
                     required
                   >
-                    <option value="mountain-trek">Mountain Trek Challenge</option>
-                    <option value="heritage-hunt">Cultural Heritage Hunt</option>
+                    <option value="season-4">Sikkim Rising Star Season 4</option>
                   </select>
                 </div>
 
                 <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700">
-                  Submit Registration
+                  Register Interest
                 </Button>
+
+                <p className="text-sm text-gray-500 text-center">
+                  By registering, you'll be notified when Season 4 registration officially opens.
+                </p>
               </form>
             </div>
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

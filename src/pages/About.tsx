@@ -1,11 +1,14 @@
-
 import { ArrowRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
+import { Header } from "@/components/Header"
+import { Footer } from "@/components/Footer"
 
 const About = () => {
   return (
     <div className="min-h-screen bg-white">
+      <Header />
+      
       <main className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
@@ -13,7 +16,7 @@ const About = () => {
             
             <div className="prose prose-lg max-w-none">
               <p className="text-xl text-gray-600 mb-8">
-                Founded in 2024, Sikkim Rising Star is a pioneering initiative that combines adventure, culture, and competition to showcase the beauty and potential of Sikkim while nurturing local talent.
+                Founded in 2021, Sikkim Rising Star is a pioneering initiative that combines adventure, culture, and competition to showcase the beauty and potential of Sikkim while nurturing local talent.
               </p>
 
               <div className="bg-blue-50 p-8 rounded-xl mb-12">
@@ -45,12 +48,12 @@ const About = () => {
                 <h2 className="text-2xl font-semibold text-gray-900 mb-4">Impact</h2>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">1000+</div>
-                    <div className="text-gray-600">Participants</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-2">600+</div>
+                    <div className="text-gray-600">Total Participants</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-3xl font-bold text-blue-600 mb-2">20+</div>
-                    <div className="text-gray-600">Events</div>
+                    <div className="text-3xl font-bold text-blue-600 mb-2">3</div>
+                    <div className="text-gray-600">Successful Seasons</div>
                   </div>
                   <div className="text-center">
                     <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>
@@ -70,6 +73,8 @@ const About = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </div>
   )
 }

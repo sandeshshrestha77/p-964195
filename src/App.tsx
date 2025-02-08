@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster"
 import { Toaster as Sonner } from "@/components/ui/sonner"
 import { TooltipProvider } from "@/components/ui/tooltip"
@@ -8,6 +7,7 @@ import Index from "./pages/Index"
 import About from "./pages/About"
 import Events from "./pages/Events"
 import Register from "./pages/Register"
+import PastEvents from "./pages/PastEvents"
 import NotFound from "./pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -22,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
+          <Route path="/past-events" element={<PastEvents />} />
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
