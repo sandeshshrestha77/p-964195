@@ -66,8 +66,8 @@ const Index = () => {
 
             <div className="max-w-3xl mx-auto text-center">
               <FadeIn>
-                <div className="inline-block bg-gray-100 text-black rounded-full px-4 py-1 text-sm font-medium mb-6">
-                  Season 4 Auditions Coming Soon
+                <div className="inline-block bg-blue-100 text-blue-700 rounded-full px-4 py-1 text-sm font-medium mb-6">
+                  Season 4 Coming Soon
                 </div>
                 <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
                   Your Talent, Sikkim's Biggest Stage
@@ -84,8 +84,8 @@ const Index = () => {
               <FadeIn delay={0.2}>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link to="/register">
-                    <Button className="bg-black text-white hover:bg-gray-800 h-12 px-8 w-full sm:w-auto">
-                      Register for Auditions <ChevronRight className="ml-2 h-4 w-4" />
+                    <Button className="bg-blue-600 hover:bg-blue-700 h-12 px-8 w-full sm:w-auto">
+                      Register Interest <ChevronRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                   <Link to="/past-events">
@@ -176,21 +176,21 @@ const Index = () => {
                   <h2 className="text-3xl font-bold mb-6">Season 4: Your Time to Shine</h2>
                   <div className="space-y-4 mb-8">
                     <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-black" />
-                      <span className="text-gray-600">Multiple audition venues across Sikkim</span>
+                      <MapPin className="h-5 w-5 text-blue-600" />
+                      <span className="text-gray-600">Multiple locations across Sikkim</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Calendar className="h-5 w-5 text-black" />
-                      <span className="text-gray-600">Auditions Starting Soon in 2024</span>
+                      <Calendar className="h-5 w-5 text-blue-600" />
+                      <span className="text-gray-600">Coming Soon in 2024</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <Users className="h-5 w-5 text-black" />
-                      <span className="text-gray-600">Limited spots per category</span>
+                      <Users className="h-5 w-5 text-blue-600" />
+                      <span className="text-gray-600">Limited spots available</span>
                     </div>
                   </div>
                   <Link to="/register">
-                    <Button className="bg-black text-white hover:bg-gray-800">
-                      Register for Auditions <ArrowRight className="ml-2 h-4 w-4" />
+                    <Button className="bg-blue-600 hover:bg-blue-700">
+                      Register Interest <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>
                 </SlideIn>
