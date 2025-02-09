@@ -1,6 +1,8 @@
-import { Header } from "@/components/Header"
-import { Footer } from "@/components/Footer"
+
+import { MainLayout } from "@/components/layouts/MainLayout"
 import { Calendar, MapPin, Trophy, Users } from "lucide-react"
+import { FadeIn } from "@/components/animations/FadeIn"
+import { SlideIn } from "@/components/animations/SlideIn"
 
 const pastEvents = [
   {
@@ -55,76 +57,78 @@ const pastEvents = [
 
 const PastEvents = () => {
   return (
-    <div className="min-h-screen bg-white">
-      <Header />
-      
-      <main className="pt-32 pb-20">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Past Events</h1>
-            
-            <div className="space-y-12">
-              {pastEvents.map((event, index) => (
-                <div key={index} className="bg-white border rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow">
-                  <div className="aspect-video w-full">
-                    <img 
-                      src={event.image} 
-                      alt={event.title}
-                      className="w-full h-full object-cover"
-                    />
+    <MainLayout>
+      <div className="container mx-auto px-4">
+        <div className="max-w-4xl mx-auto">
+          <FadeIn>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+              Past <span className="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">Events</span>
+            </h1>
+          </FadeIn>
+          
+          <div className="space-y-12">
+            {pastEvents.map((event, index) => (
+              <SlideIn 
+                key={index} 
+                className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all"
+                delay={index * 0.1}
+              >
+                <div className="aspect-video w-full">
+                  <img 
+                    src={event.image} 
+                    alt={event.title}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                
+                <div className="p-6">
+                  <div className="flex items-center gap-2 text-blue-600 mb-2">
+                    <span className="text-sm font-semibold">{event.season}</span>
+                    <span className="text-gray-400">•</span>
+                    <span className="text-sm text-gray-600">{event.year}</span>
                   </div>
                   
-                  <div className="p-6">
-                    <div className="flex items-center gap-2 text-blue-600 mb-2">
-                      <span className="text-sm font-semibold">{event.season}</span>
-                      <span className="text-gray-400">•</span>
-                      <span className="text-sm text-gray-600">{event.year}</span>
+                  <h2 className="text-2xl font-semibold text-gray-900 mb-4">{event.title}</h2>
+                  
+                  <p className="text-gray-600 mb-6">{event.description}</p>
+                  
+                  <div className="grid md:grid-cols-2 gap-4 mb-6">
+                    <div className="flex items-center text-gray-600">
+                      <Users className="h-5 w-5 mr-2 text-blue-600" />
+                      {event.participants} Participants
                     </div>
-                    
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-4">{event.title}</h2>
-                    
-                    <p className="text-gray-600 mb-6">{event.description}</p>
-                    
-                    <div className="grid md:grid-cols-2 gap-4 mb-6">
-                      <div className="flex items-center text-gray-600">
-                        <Users className="h-5 w-5 mr-2 text-blue-600" />
-                        {event.participants} Participants
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <MapPin className="h-5 w-5 mr-2 text-blue-600" />
-                        {event.location}
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <Trophy className="h-5 w-5 mr-2 text-blue-600" />
-                        Winner: {event.winner}
-                      </div>
-                      <div className="flex items-center text-gray-600">
-                        <Calendar className="h-5 w-5 mr-2 text-blue-600" />
-                        {event.year}
-                      </div>
+                    <div className="flex items-center text-gray-600">
+                      <MapPin className="h-5 w-5 mr-2 text-blue-600" />
+                      {event.location}
                     </div>
-                    
-                    <div>
-                      <h3 className="font-semibold text-gray-900 mb-3">Event Highlights</h3>
-                      <ul className="grid md:grid-cols-2 gap-2">
-                        {event.highlights.map((highlight, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
-                            <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
-                            {highlight}
-                          </li>
-                        ))}
-                      </ul>
+                    <div className="flex items-center text-gray-600">
+                      <Trophy className="h-5 w-5 mr-2 text-blue-600" />
+                      Winner: {event.winner}
+                    </div>
+                    <div className="flex items-center text-gray-600">
+                      <Calendar className="h-5 w-5 mr-2 text-blue-600" />
+                      {event.year}
                     </div>
                   </div>
+                  
+                  <div>
+                    <h3 className="font-semibold text-gray-900 mb-3">Event Highlights</h3>
+                    <ul className="grid md:grid-cols-2 gap-2">
+                      {event.highlights.map((highlight, idx) => (
+                        <li key={idx} className="flex items-center text-gray-600">
+                          <span className="w-2 h-2 bg-gradient-to-r from-blue-600 to-violet-600 rounded-full mr-2"></span>
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              ))}
-            </div>
+              </SlideIn>
+            ))}
           </div>
         </div>
-      </main>
-
-      <Footer />
-    </div>
+      </div>
+    </MainLayout>
   )
 }
 

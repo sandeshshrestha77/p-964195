@@ -8,6 +8,7 @@ import About from "./pages/About"
 import Events from "./pages/Events"
 import Register from "./pages/Register"
 import PastEvents from "./pages/PastEvents"
+import Contact from "./pages/Contact"
 import NotFound from "./pages/NotFound"
 
 const queryClient = new QueryClient()
@@ -24,6 +25,7 @@ const App = () => (
           <Route path="/events" element={<Events />} />
           <Route path="/past-events" element={<PastEvents />} />
           <Route path="/register" element={<Register />} />
+          <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
