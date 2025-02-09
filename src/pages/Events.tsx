@@ -1,3 +1,4 @@
+
 import { Calendar, MapPin, Users } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Link } from "react-router-dom"
@@ -23,9 +24,9 @@ const Events = () => {
                     </div>
                   </div>
                   <div className="w-full md:w-2/3">
-                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">Sikkim Rising Star Season 4</h2>
+                    <h2 className="text-2xl font-semibold text-gray-900 mb-2">Sikkim Rising Star Season 4 Auditions</h2>
                     <p className="text-gray-600 mb-4">
-                      Get ready for our biggest season yet! Experience thrilling adventures, cultural challenges, and unforgettable moments across Sikkim.
+                      Get ready to showcase your talent! Whether you're a singer, dancer, musician, or performer, this is your chance to shine on Sikkim's biggest stage.
                     </p>
                     <div className="flex flex-wrap gap-4 mb-4">
                       <div className="flex items-center text-gray-600">
@@ -34,7 +35,7 @@ const Events = () => {
                       </div>
                       <div className="flex items-center text-gray-600">
                         <MapPin className="h-4 w-4 mr-2" />
-                        Multiple Locations
+                        Multiple Venues
                       </div>
                       <div className="flex items-center text-gray-600">
                         <Users className="h-4 w-4 mr-2" />
@@ -42,16 +43,16 @@ const Events = () => {
                       </div>
                     </div>
                     <Link to="/register">
-                      <Button className="bg-blue-600 hover:bg-blue-700">Register Interest</Button>
+                      <Button className="bg-blue-600 hover:bg-blue-700">Register for Auditions</Button>
                     </Link>
                   </div>
                 </div>
               </div>
 
               <div className="bg-gray-50 border rounded-xl p-8 text-center">
-                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Past Events</h2>
+                <h2 className="text-2xl font-semibold text-gray-900 mb-4">Past Performances</h2>
                 <p className="text-gray-600 mb-6">
-                  Curious about our previous seasons? Check out the highlights and memories from Sikkim Rising Star Seasons 1-3.
+                  Relive the magic of previous seasons! Watch incredible performances, success stories, and memorable moments from Sikkim Rising Star Seasons 1-3.
                 </p>
                 <Link to="/past-events">
                   <Button variant="outline">View Past Events</Button>
