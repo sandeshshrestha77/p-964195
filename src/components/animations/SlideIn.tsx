@@ -1,5 +1,14 @@
-import { motion } from "framer-motion"
+
+import { motion, HTMLMotionProps } from "framer-motion"
 import { cn } from "@/lib/utils"
+
+interface SlideInProps extends Omit<HTMLMotionProps<"div">, "initial" | "animate" | "transition"> {
+  children: React.ReactNode
+  className?: string
+  direction?: "left" | "right" | "up" | "down"
+  delay?: number
+  duration?: number
+}
 
 export function SlideIn({
   children,
@@ -8,13 +17,7 @@ export function SlideIn({
   delay = 0,
   duration = 0.5,
   ...props
-}: {
-  children: React.ReactNode
-  className?: string
-  direction?: "left" | "right" | "up" | "down"
-  delay?: number
-  duration?: number
-} & React.HTMLAttributes<HTMLDivElement>) {
+}: SlideInProps) {
   const directionMap = {
     left: { x: -50, y: 0 },
     right: { x: 50, y: 0 },
