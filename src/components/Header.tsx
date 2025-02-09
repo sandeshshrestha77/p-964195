@@ -1,18 +1,17 @@
-import { Link } from "react-router-dom"
-import { Button } from "@/components/ui/button"
-import { useState } from "react"
-import { Menu, X } from "lucide-react"
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { Menu, X } from "lucide-react";
 
 const navigation = [
   { name: "Home", href: "/" },
   { name: "About", href: "/about" },
   { name: "Events", href: "/events" },
-  { name: "Past Events", href: "/past-events" },
   { name: "Contact", href: "/contact" }
-]
+];
 
 export const Header = () => {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
     <header className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
@@ -50,6 +49,7 @@ export const Header = () => {
           type="button"
           className="md:hidden p-2 text-gray-600"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label={`${mobileMenuOpen ? 'Close' : 'Open'} mobile menu`}
         >
           {mobileMenuOpen ? (
             <X className="h-6 w-6" />
@@ -73,7 +73,7 @@ export const Header = () => {
                 {item.name}
               </Link>
             ))}
-            <Link 
+            <Link
               to="/register"
               onClick={() => setMobileMenuOpen(false)}
             >
@@ -85,5 +85,5 @@ export const Header = () => {
         </div>
       )}
     </header>
-  )
-}
+  );
+};
