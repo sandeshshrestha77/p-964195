@@ -216,21 +216,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Countdown Section */}
-          <div className="max-w-5xl mx-auto mb-24">
-            <FadeIn className="text-center mb-16">
-              <span className="text-primary font-medium">Next Season</span>
-              <h2 className="text-3xl font-bold mt-2 mb-4">Registration Closing Soon</h2>
-              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
-                Don't miss your chance to participate in Season 4
-              </p>
-            </FadeIn>
-            
-            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <CountdownTimer targetDate={new Date("2024-06-01")} />
-            </div>
-          </div>
-
           {/* Process Section */}
           <div className="max-w-5xl mx-auto mb-24">
             <FadeIn className="text-center mb-16">
