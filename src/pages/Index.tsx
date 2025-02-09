@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { ChevronRight, Mountain, Users, Trophy, MapPin, Calendar, ArrowRight } from "lucide-react"
+import { ChevronRight, Star, Users, Trophy, MapPin, Calendar, ArrowRight, Play, Music, Mic } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Header } from "@/components/Header"
 import { Footer } from "@/components/Footer"
@@ -9,225 +9,167 @@ import { FAQ } from "@/components/FAQ"
 import { CountdownTimer } from "@/components/CountdownTimer"
 import { FadeIn } from "@/components/animations/FadeIn"
 import { SlideIn } from "@/components/animations/SlideIn"
-import { 
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselPrevious,
-  CarouselNext
-} from "@/components/ui/carousel"
-
-const heroImages = [
-  {
-    url: "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7",
-    caption: "Showcase Your Talent"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3",
-    caption: "Dance to Glory"
-  },
-  {
-    url: "https://images.unsplash.com/photo-1511735111819-9a3f7709049c",
-    caption: "Sing Your Heart Out"
-  }
-]
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Hero Section with Carousel */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <Carousel className="mb-12">
-              <CarouselContent>
-                {heroImages.map((image, index) => (
-                  <CarouselItem key={index}>
-                    <div className="relative aspect-[21/9] rounded-xl overflow-hidden">
-                      <img 
-                        src={image.url} 
-                        alt={image.caption}
-                        className="w-full h-full object-cover"
-                        loading="lazy"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-                      <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                        <h2 className="text-3xl font-bold mb-2">{image.caption}</h2>
-                      </div>
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-4" />
-              <CarouselNext className="right-4" />
-            </Carousel>
+      {/* Hero Section - Full Screen with Video Background */}
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* Video Background */}
+        <div className="absolute inset-0 w-full h-full">
+          <div className="absolute inset-0 bg-black/60 z-10" />
+          <video
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover"
+          >
+            <source src="https://cdn.gpteng.co/videos/performance.mp4" type="video/mp4" />
+          </video>
+        </div>
 
-            <div className="max-w-3xl mx-auto text-center">
-              <FadeIn>
-                <div className="inline-block bg-blue-100 text-blue-700 rounded-full px-4 py-1 text-sm font-medium mb-6">
-                  Season 4 Coming Soon
-                </div>
-                <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-                  Your Talent, Sikkim's Biggest Stage
-                </h1>
-                <p className="text-xl text-gray-600 mb-10">
-                  Join India and Nepal's premier talent hunt competition showcasing singing, dancing, and performing arts in the breathtaking landscapes of Sikkim.
-                </p>
-              </FadeIn>
-
-              <div className="mb-12">
-                <CountdownTimer />
-              </div>
-
-              <FadeIn delay={0.2}>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Link to="/register">
-                    <Button className="bg-blue-600 hover:bg-blue-700 h-12 px-8 w-full sm:w-auto">
-                      Register Interest <ChevronRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                  <Link to="/past-events">
-                    <Button variant="outline" className="h-12 px-8 w-full sm:w-auto">
-                      Past Performances
-                    </Button>
-                  </Link>
-                </div>
-              </FadeIn>
+        {/* Hero Content */}
+        <div className="relative z-20 container mx-auto px-4 text-center text-white">
+          <FadeIn>
+            <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm rounded-full px-4 py-2 text-sm font-medium mb-8">
+              <Star className="h-4 w-4 text-yellow-400" />
+              Season 4 Registration Opening Soon
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats Section */}
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {[
-              { value: "3", label: "Successful Seasons" },
-              { value: "1000+", label: "Talented Performers" },
-              { value: "50+", label: "Performance Categories" },
-              { value: "100+", label: "Success Stories" }
-            ].map((stat, index) => (
-              <FadeIn key={index} delay={index * 0.1}>
-                <div className="text-center">
-                  <div className="text-3xl font-bold text-black mb-2">{stat.value}</div>
-                  <div className="text-sm text-gray-600">{stat.label}</div>
-                </div>
-              </FadeIn>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Section */}
-      <section className="py-20 bg-gray-50">
-        <div className="container mx-auto px-4">
-          <FadeIn className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl font-bold mb-4">Why Choose Sikkim Rising Star</h2>
-            <p className="text-gray-600">
-              Showcase your talent on Sikkim's biggest stage and take your first step towards stardom.
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              Your Journey to <br />
+              <span className="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                Stardom
+              </span> Begins Here
+            </h1>
+            <p className="text-xl md:text-2xl text-gray-200 mb-12 max-w-3xl mx-auto">
+              Join Sikkim's premier talent hunt competition and showcase your artistry on the region's biggest stage.
             </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 h-14 px-8 text-lg">
+                Register Now <ChevronRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8 text-lg">
+                <Play className="mr-2 h-5 w-5" /> Watch Highlights
+              </Button>
+            </div>
           </FadeIn>
-          
+        </div>
+
+        {/* Scroll Indicator */}
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+          <ChevronRight className="h-8 w-8 text-white rotate-90" />
+        </div>
+      </section>
+
+      {/* Categories Section */}
+      <section className="py-24 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <FadeIn className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Performance Categories</h2>
+            <p className="text-xl text-gray-600">Showcase your talent across multiple disciplines</p>
+          </FadeIn>
+
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: Trophy,
-                title: "Multiple Categories",
-                description: "From singing and dancing to instrumental performances and more - showcase your unique talent."
+                icon: Mic,
+                title: "Vocal Performance",
+                description: "From classical to contemporary, express yourself through song.",
+                color: "bg-rose-500"
+              },
+              {
+                icon: Music,
+                title: "Instrumental",
+                description: "Master musicians showcasing instrumental excellence.",
+                color: "bg-blue-500"
               },
               {
                 icon: Users,
-                title: "Expert Mentorship",
-                description: "Get guidance from industry professionals and experienced performers throughout your journey."
-              },
-              {
-                icon: Mountain,
-                title: "Grand Platform",
-                description: "Perform in front of thousands and get exposure to media and entertainment industry."
+                title: "Dance",
+                description: "Traditional and modern dance forms welcome.",
+                color: "bg-violet-500"
               }
-            ].map((feature, index) => (
+            ].map((category, index) => (
               <SlideIn
                 key={index}
                 direction="up"
                 delay={index * 0.2}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-md transition-all"
+                className="group relative overflow-hidden rounded-2xl"
               >
-                <div className="w-12 h-12 bg-gray-100 rounded-xl flex items-center justify-center mb-6">
-                  <feature.icon className="h-6 w-6 text-black" />
+                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 z-10" />
+                <div className={`absolute top-4 left-4 ${category.color} rounded-full p-3`}>
+                  <category.icon className="h-6 w-6 text-white" />
                 </div>
-                <h3 className="text-xl font-semibold mb-4">{feature.title}</h3>
-                <p className="text-gray-600">{feature.description}</p>
+                <img
+                  src={`https://source.unsplash.com/random/800x600?${category.title.toLowerCase()}`}
+                  alt={category.title}
+                  className="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-6 z-20 text-white">
+                  <h3 className="text-2xl font-bold mb-2">{category.title}</h3>
+                  <p className="text-gray-200">{category.description}</p>
+                </div>
               </SlideIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Season 4 Preview */}
-      <section className="py-20 bg-white">
+      {/* Countdown Section */}
+      <section className="py-24 bg-black text-white">
         <div className="container mx-auto px-4">
-          <div className="max-w-5xl mx-auto">
-            <div className="bg-gradient-to-br from-gray-50 to-white border rounded-2xl p-8 md:p-12">
-              <div className="grid md:grid-cols-2 gap-12 items-center">
-                <SlideIn direction="left">
-                  <h2 className="text-3xl font-bold mb-6">Season 4: Your Time to Shine</h2>
-                  <div className="space-y-4 mb-8">
-                    <div className="flex items-center gap-3">
-                      <MapPin className="h-5 w-5 text-blue-600" />
-                      <span className="text-gray-600">Multiple locations across Sikkim</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Calendar className="h-5 w-5 text-blue-600" />
-                      <span className="text-gray-600">Coming Soon in 2024</span>
-                    </div>
-                    <div className="flex items-center gap-3">
-                      <Users className="h-5 w-5 text-blue-600" />
-                      <span className="text-gray-600">Limited spots available</span>
-                    </div>
-                  </div>
-                  <Link to="/register">
-                    <Button className="bg-blue-600 hover:bg-blue-700">
-                      Register Interest <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </Link>
-                </SlideIn>
-                <SlideIn direction="right" className="relative aspect-square rounded-xl overflow-hidden">
-                  <img 
-                    src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7"
-                    alt="Season 4 Preview"
-                    className="object-cover w-full h-full"
-                    loading="lazy"
-                  />
-                </SlideIn>
-              </div>
-            </div>
+          <FadeIn className="text-center mb-12">
+            <h2 className="text-4xl font-bold mb-4">Next Season Begins In</h2>
+            <p className="text-xl text-gray-400">Don't miss your chance to participate</p>
+          </FadeIn>
+          <CountdownTimer />
+        </div>
+      </section>
+
+      {/* Stats Section with Gradient Cards */}
+      <section className="py-24 bg-gradient-to-b from-gray-50 to-white">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            {[
+              { value: "3+", label: "Successful Seasons", icon: Trophy },
+              { value: "1000+", label: "Talented Performers", icon: Users },
+              { value: "50+", label: "Performance Categories", icon: Music },
+              { value: "100+", label: "Success Stories", icon: Star }
+            ].map((stat, index) => (
+              <FadeIn key={index} delay={index * 0.1}>
+                <div className="bg-gradient-to-br from-white to-gray-50 rounded-2xl p-8 shadow-lg border border-gray-100">
+                  <stat.icon className="h-8 w-8 text-blue-600 mb-4" />
+                  <div className="text-4xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                  <div className="text-gray-600">{stat.label}</div>
+                </div>
+              </FadeIn>
+            ))}
           </div>
         </div>
       </section>
 
       <Testimonials />
-
       <FAQ />
 
-      {/* Newsletter Section */}
-      <section className="py-20 bg-black text-white">
-        <div className="container mx-auto px-4">
-          <FadeIn className="max-w-xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Stay Updated</h2>
-            <p className="text-gray-300 mb-8">
-              Be the first to know when Season 4 registration opens and receive exclusive updates.
+      {/* CTA Section */}
+      <section className="relative py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-violet-600" />
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7')] opacity-10 bg-cover bg-center" />
+        <div className="relative container mx-auto px-4">
+          <FadeIn className="max-w-2xl mx-auto text-center text-white">
+            <h2 className="text-4xl font-bold mb-6">Ready to Begin Your Journey?</h2>
+            <p className="text-xl mb-8 text-gray-100">
+              Join thousands of talented performers who have taken their first step towards stardom with Sikkim Rising Star.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="h-12 bg-white/10 border-white/20 text-white placeholder:text-gray-400"
-              />
-              <Button className="bg-white text-black hover:bg-gray-100 h-12 whitespace-nowrap">
-                Subscribe Now
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button size="lg" className="bg-white text-black hover:bg-gray-100 h-14 px-8">
+                Register Now <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+              <Button size="lg" variant="outline" className="border-white text-white hover:bg-white/10 h-14 px-8">
+                Learn More
               </Button>
             </div>
           </FadeIn>
