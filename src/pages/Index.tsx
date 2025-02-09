@@ -1,126 +1,114 @@
-import React from "react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import {
-  ChevronRight,
-  Star,
-  Users,
-  Trophy,
-  MapPin,
-  Calendar,
-  ArrowRight,
-  Play,
-  Music,
-  Mic,
-  Globe,
-  Award,
-  Sparkles,
-  Target,
-  Heart,
-} from "lucide-react";
-import { Link } from "react-router-dom";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
-import { Testimonials } from "@/components/Testimonials";
-import { FAQ } from "@/components/FAQ";
-import { CountdownTimer } from "@/components/CountdownTimer";
-import { FadeIn } from "@/components/animations/FadeIn";
-import { SlideIn } from "@/components/animations/SlideIn";
-import { LucideIcon } from "lucide-react";
-import { MainLayout } from "@/components/layouts/MainLayout";
+import React from "react"
+import { ArrowRight, Users, Star, Award, Sparkles, Target, Heart, Globe, Music, Calendar, MapPin } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Link } from "react-router-dom"
+import { MainLayout } from "@/components/layouts/MainLayout"
+import { FadeIn } from "@/components/animations/FadeIn"
+import { SlideIn } from "@/components/animations/SlideIn"
+import { LucideIcon } from "lucide-react"
+import { CountdownTimer } from "@/components/CountdownTimer"
 
-// Define interfaces for data structures
 interface StatItem {
-  Icon: LucideIcon;
-  value: string;
-  label: string;
+  Icon: LucideIcon
+  value: string
+  label: string
 }
 
 interface CategoryItem {
-  Icon: LucideIcon;
-  title: string;
-  description: string;
-  features: string[];
+  Icon: LucideIcon
+  title: string
+  description: string
+  features: string[]
 }
 
 interface ProcessItem {
-  Icon: LucideIcon;
-  title: string;
-  description: string;
+  Icon: LucideIcon
+  title: string
+  description: string
 }
 
-// Data for stats section
 const stats: StatItem[] = [
   {
     Icon: Users,
     value: "10,000+",
-    label: "Participants",
+    label: "Participants"
   },
   {
     Icon: Star,
     value: "3",
-    label: "Successful Seasons",
+    label: "Successful Seasons"
   },
   {
     Icon: MapPin,
     value: "20+",
-    label: "Districts Covered",
+    label: "Districts Covered"
   },
   {
     Icon: Music,
     value: "500+",
-    label: "Performances",
-  },
-];
+    label: "Performances"
+  }
+]
 
-// Data for categories section
 const categories: CategoryItem[] = [
   {
     Icon: Music,
     title: "Vocal Performance",
     description: "Showcase your singing talent across various genres and styles.",
-    features: ["Classical Singing", "Modern Contemporary", "Folk Music", "Fusion Performances"],
+    features: [
+      "Classical Singing",
+      "Modern Contemporary",
+      "Folk Music",
+      "Fusion Performances"
+    ]
   },
   {
     Icon: Users,
     title: "Dance",
     description: "Express yourself through traditional and contemporary dance forms.",
-    features: ["Traditional Folk Dance", "Classical Dance", "Contemporary Styles", "Group Performances"],
+    features: [
+      "Traditional Folk Dance",
+      "Classical Dance",
+      "Contemporary Styles",
+      "Group Performances"
+    ]
   },
   {
     Icon: Globe,
     title: "Cultural Arts",
     description: "Celebrate and showcase Sikkim's rich cultural heritage.",
-    features: ["Traditional Instruments", "Folk Art Forms", "Cultural Performances", "Heritage Showcase"],
-  },
-];
+    features: [
+      "Traditional Instruments",
+      "Folk Art Forms",
+      "Cultural Performances",
+      "Heritage Showcase"
+    ]
+  }
+]
 
-// Data for registration process section
 const process: ProcessItem[] = [
   {
     Icon: Users,
     title: "Register Online",
-    description:
-      "Fill out the simple online registration form with your basic information and performance category.",
+    description: "Fill out the simple online registration form with your basic information and performance category."
   },
   {
     Icon: Calendar,
     title: "Choose Audition Slot",
-    description: "Select your preferred audition date and venue from our multiple regional centers.",
+    description: "Select your preferred audition date and venue from our multiple regional centers."
   },
   {
     Icon: Star,
     title: "Prepare Performance",
-    description: "Get ready for your audition with our guidelines and preparation tips.",
+    description: "Get ready for your audition with our guidelines and preparation tips."
   },
   {
     Icon: Award,
     title: "Attend Audition",
-    description: "Showcase your talent in front of our expert panel of judges at your chosen venue.",
-  },
-];
+    description: "Showcase your talent in front of our expert panel of judges at your chosen venue."
+  }
+]
 
-// Main Component
 const Index = () => {
   return (
     <MainLayout>
@@ -225,9 +213,8 @@ const Index = () => {
                 Don't miss your chance to participate in Season 4
               </p>
             </FadeIn>
-            
             <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
-              <CountdownTimer targetDate={new Date("2024-06-01")} />
+              <CountdownTimer targetDate="2024-06-01" />
             </div>
           </div>
 
@@ -282,7 +269,7 @@ const Index = () => {
         </div>
       </div>
     </MainLayout>
-  );
-};
+  )
+}
 
-export default Index;
+export default Index
