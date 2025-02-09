@@ -1,18 +1,16 @@
-
-import { cn } from "@/lib/utils"
-import { Header } from "@/components/Header"
-import { Footer } from "@/components/Footer"
+import { Header } from '@/components/Header'
+import { Footer } from '@/components/Footer'
+import { ReactNode } from 'react'
 
 interface MainLayoutProps {
-  children: React.ReactNode
-  className?: string
+  children: ReactNode
 }
 
-export function MainLayout({ children, className }: MainLayoutProps) {
+export const MainLayout = ({ children }: MainLayoutProps) => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-white to-gray-50/50">
+    <div className="min-h-screen flex flex-col">
       <Header />
-      <main className={cn("w-full pt-32 pb-20", className)}>
+      <main className="flex-grow">
         {children}
       </main>
       <Footer />

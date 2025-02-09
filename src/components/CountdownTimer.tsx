@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react"
 import { FadeIn } from "./animations/FadeIn"
 
-const SEASON_4_START = new Date("2025-06-01T00:00:00").getTime()
+interface CountdownTimerProps {
+  targetDate: string; // Add a prop for the target date
+}
 
-export function CountdownTimer() {
+export function CountdownTimer({ targetDate }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
     hours: 0,
@@ -12,20 +14,24 @@ export function CountdownTimer() {
   })
 
   useEffect(() => {
+    const SEASON_4_START = new Date(targetDate).getTime() // Use the passed targetDate
     const timer = setInterval(() => {
       const now = new Date().getTime()
       const distance = SEASON_4_START - now
-
-      setTimeLeft({
-        days: Math.floor(distance / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
-        minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
-        seconds: Math.floor((distance % (1000 * 60)) / 1000)
-      })
+      if (distance > 0) {
+        setTimeLeft({
+          days: Math.floor(distance / (1000 * 60 * 60 * 24)),
+          hours: Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)),
+          minutes: Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60)),
+          seconds: Math.floor((distance % (1000 * 60)) / 1000)
+        })
+      } else {
+        clearInterval(timer) // Stop the timer when the countdown ends
+      }
     }, 1000)
 
     return () => clearInterval(timer)
-  }, [])
+  }, [targetDate]) // Add targetDate as a dependency
 
   return (
     <FadeIn className="flex justify-center gap-4 md:gap-8">

@@ -1,46 +1,83 @@
-export function Footer() {
+import { Link } from "react-router-dom"
+import { Facebook, Instagram, Youtube, Twitter } from "lucide-react"
+
+const navigation = {
+  main: [
+    { name: "About", href: "/about" },
+    { name: "Events", href: "/events" },
+    { name: "Past Events", href: "/past-events" },
+    { name: "Contact", href: "/contact" },
+    { name: "Register", href: "/register" }
+  ],
+  social: [
+    { name: "Facebook", icon: Facebook, href: "#" },
+    { name: "Instagram", icon: Instagram, href: "#" },
+    { name: "Youtube", icon: Youtube, href: "#" },
+    { name: "Twitter", icon: Twitter, href: "#" }
+  ]
+}
+
+export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-400">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 py-16">
-          <div className="space-y-4">
-            <h3 className="text-lg font-bold text-white">About Us</h3>
-            <p className="text-sm leading-relaxed">
-              Sikkim Rising Star is the region's premier talent hunt competition, bringing together exceptional performers from India and Nepal to showcase their artistic abilities on a grand stage.
+    <footer className="bg-white border-t border-gray-100">
+      <div className="container mx-auto px-4 py-12">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+          {/* Brand */}
+          <div className="md:col-span-2">
+            <Link to="/" className="flex items-center gap-2 mb-4">
+              <img src="/logo.png" alt="SRS Logo" className="h-8 w-auto" />
+              <span className="font-bold text-xl text-gray-900">SRS</span>
+            </Link>
+            <p className="text-gray-600 mb-4 max-w-md">
+              Sikkim Rising Star is the premier talent platform celebrating and promoting 
+              the diverse cultural heritage of the Himalayan region since 2018.
             </p>
+            <div className="flex gap-4">
+              {navigation.social.map((item) => (
+                <a
+                  key={item.name}
+                  href={item.href}
+                  className="text-gray-400 hover:text-primary transition-colors"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <item.icon className="h-5 w-5" />
+                </a>
+              ))}
+            </div>
           </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Quick Links</h3>
-            <ul className="space-y-2">
-              <li><a href="/" className="text-sm hover:text-white transition-colors">Home</a></li>
-              <li><a href="/about" className="text-sm hover:text-white transition-colors">About</a></li>
-              <li><a href="/events" className="text-sm hover:text-white transition-colors">Events</a></li>
-              <li><a href="/past-events" className="text-sm hover:text-white transition-colors">Past Events</a></li>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Quick Links</h3>
+            <ul className="space-y-3">
+              {navigation.main.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    to={item.href}
+                    className="text-gray-600 hover:text-primary transition-colors"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Contact</h3>
-            <ul className="space-y-2">
-              <li className="text-sm">Email: info@sikkimrisingstar.com</li>
-              <li className="text-sm">Phone: +91 123 456 7890</li>
-              <li className="text-sm">Location: Gangtok, Sikkim</li>
-            </ul>
-          </div>
-          
-          <div className="space-y-4">
-            <h3 className="text-lg font-semibold text-white">Follow Us</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm hover:text-white transition-colors">Twitter</a></li>
-              <li><a href="#" className="text-sm hover:text-white transition-colors">Facebook</a></li>
-              <li><a href="#" className="text-sm hover:text-white transition-colors">Instagram</a></li>
-              <li><a href="#" className="text-sm hover:text-white transition-colors">LinkedIn</a></li>
+
+          {/* Contact */}
+          <div>
+            <h3 className="font-semibold text-gray-900 mb-4">Contact Us</h3>
+            <ul className="space-y-3 text-gray-600">
+              <li>Gangtok, Sikkim</li>
+              <li>India</li>
+              <li>contact@sikkimrisingstar.com</li>
+              <li>+91 1234567890</li>
             </ul>
           </div>
         </div>
-        
-        <div className="border-t border-gray-800 py-8 text-center text-sm">
+
+        {/* Copyright */}
+        <div className="border-t border-gray-100 pt-8 text-center text-gray-500 text-sm">
           <p>© {new Date().getFullYear()} Sikkim Rising Star. All rights reserved.</p>
         </div>
       </div>
