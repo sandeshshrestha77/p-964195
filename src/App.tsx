@@ -7,7 +7,6 @@ import Index from "./pages/Index"
 import About from "./pages/About"
 import Events from "./pages/Events"
 import Register from "./pages/Register"
-import PastEvents from "./pages/PastEvents"
 import Contact from "./pages/Contact"
 import NotFound from "./pages/NotFound"
 
@@ -23,7 +22,6 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/about" element={<About />} />
           <Route path="/events" element={<Events />} />
-          <Route path="/past-events" element={<PastEvents />} />
           <Route path="/register" element={<Register />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="*" element={<NotFound />} />

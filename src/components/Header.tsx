@@ -1,8 +1,7 @@
-
 import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { Button } from "@/components/ui/button"
-import { Menu, X, Star } from "lucide-react"
+import { Menu, X } from "lucide-react"
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -11,41 +10,37 @@ export function Header() {
   const isActive = (path: string) => location.pathname === path
 
   return (
-    <nav className="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100 shadow-sm">
-      <div className="container mx-auto px-4">
-        <div className="flex items-center justify-between h-16">
-          <Link to="/" className="text-xl font-semibold text-gray-900">
-            Sikkim Rising Star
+    <nav className="fixed w-full bg-white/95 backdrop-blur-md z-50 border-b border-gray-100">
+      <div className="container mx-auto">
+        <div className="flex items-center justify-between h-20">
+          <Link to="/" className="flex items-center space-x-2">
+            <span className="text-2xl font-bold bg-gradient-to-r from-primary to-blue-700 bg-clip-text text-transparent">
+              Sikkim Rising Star
+            </span>
           </Link>
           
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/about" 
-              className={`${isActive('/about') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900 transition-colors`}
+              className={`nav-link ${isActive('/about') ? 'active' : ''}`}
             >
               About
             </Link>
             <Link 
               to="/events" 
-              className={`${isActive('/events') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900 transition-colors`}
+              className={`nav-link ${isActive('/events') ? 'active' : ''}`}
             >
               Events
             </Link>
             <Link 
-              to="/past-events" 
-              className={`${isActive('/past-events') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900 transition-colors`}
-            >
-              Past Events
-            </Link>
-            <Link 
               to="/contact" 
-              className={`${isActive('/contact') ? 'text-black font-medium' : 'text-gray-600'} hover:text-black transition-colors`}
+              className={`nav-link ${isActive('/contact') ? 'active' : ''}`}
             >
               Contact
             </Link>
             <Link to="/register">
-              <Button variant="default" className="bg-blue-600 hover:bg-blue-700">
+              <Button className="bg-primary hover:bg-primary/90 text-white">
                 Register Now
               </Button>
             </Link>
@@ -57,9 +52,9 @@ export function Header() {
             onClick={() => setIsMenuOpen(!isMenuOpen)}
           >
             {isMenuOpen ? (
-              <X className="h-6 w-6 text-black" />
+              <X className="h-6 w-6 text-gray-900" />
             ) : (
-              <Menu className="h-6 w-6 text-black" />
+              <Menu className="h-6 w-6 text-gray-900" />
             )}
           </button>
         </div>
@@ -68,27 +63,27 @@ export function Header() {
       {/* Mobile Menu */}
       {isMenuOpen && (
         <div className="md:hidden bg-white border-t">
-          <div className="container mx-auto px-4 py-6 space-y-6">
+          <div className="container py-4 space-y-4">
             <Link 
               to="/about" 
-              className={`block ${isActive('/about') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900`}
+              className={`block nav-link ${isActive('/about') ? 'active' : ''}`}
             >
               About
             </Link>
             <Link 
               to="/events" 
-              className={`block ${isActive('/events') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900`}
+              className={`block nav-link ${isActive('/events') ? 'active' : ''}`}
             >
               Events
             </Link>
             <Link 
-              to="/past-events" 
-              className={`block ${isActive('/past-events') ? 'text-blue-600' : 'text-gray-600'} hover:text-gray-900`}
+              to="/contact" 
+              className={`block nav-link ${isActive('/contact') ? 'active' : ''}`}
             >
-              Past Events
+              Contact
             </Link>
             <Link to="/register">
-              <Button variant="default" className="w-full bg-blue-600 hover:bg-blue-700">
+              <Button className="w-full bg-primary hover:bg-primary/90 text-white">
                 Register Now
               </Button>
             </Link>
