@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import { FadeIn } from "./animations/FadeIn"
 
-const SEASON_4_START = new Date("2024-06-01T00:00:00").getTime()
+const SEASON_4_START = new Date("2025-06-01T00:00:00").getTime()
 
 export function CountdownTimer() {
   const [timeLeft, setTimeLeft] = useState({
