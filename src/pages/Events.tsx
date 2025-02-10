@@ -119,7 +119,7 @@ const Events = () => {
                     </div>
                   </div>
                   <Link to="/register">
-                    <Button className="w-full bg-white text-black hover:bg-gray-100 h-12 rounded-xl text-base border border-gray-200">
+                    <Button className="w-full bg-primary text-white hover:bg-primary/90 h-12 rounded-xl text-base">
                       Register Interest <ArrowRight className="ml-2 h-4 w-4" />
                     </Button>
                   </Link>

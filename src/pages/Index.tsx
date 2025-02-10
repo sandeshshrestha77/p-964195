@@ -1,149 +1,161 @@
-import React from "react"
-import { ArrowRight, Users, Star, Award, Sparkles, Target, Heart, Globe, Music, Calendar, MapPin } from "lucide-react"
-import { Button } from "@/components/ui/button"
-import { Link } from "react-router-dom"
-import { MainLayout } from "@/components/layouts/MainLayout"
-import { FadeIn } from "@/components/animations/FadeIn"
-import { SlideIn } from "@/components/animations/SlideIn"
-import { LucideIcon } from "lucide-react"
-import { CountdownTimer } from "@/components/CountdownTimer"
+import React from "react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  ChevronRight,
+  Star,
+  Users,
+  Trophy,
+  MapPin,
+  Calendar,
+  ArrowRight,
+  Play,
+  Music,
+  Mic,
+  Globe,
+  Award,
+  Sparkles,
+  Target,
+  Heart,
+} from "lucide-react";
+import { Link } from "react-router-dom";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
+import { Testimonials } from "@/components/Testimonials";
+import { FAQ } from "@/components/FAQ";
+import { CountdownTimer } from "@/components/CountdownTimer";
+import { FadeIn } from "@/components/animations/FadeIn";
+import { SlideIn } from "@/components/animations/SlideIn";
+import { LucideIcon } from "lucide-react";
+import { MainLayout } from "@/components/layouts/MainLayout";
 
+// Define interfaces for data structures
 interface StatItem {
-  Icon: LucideIcon
-  value: string
-  label: string
+  Icon: LucideIcon;
+  value: string;
+  label: string;
 }
 
 interface CategoryItem {
-  Icon: LucideIcon
-  title: string
-  description: string
-  features: string[]
+  Icon: LucideIcon;
+  title: string;
+  description: string;
+  features: string[];
 }
 
 interface ProcessItem {
-  Icon: LucideIcon
-  title: string
-  description: string
+  Icon: LucideIcon;
+  title: string;
+  description: string;
 }
 
+// Data for stats section
 const stats: StatItem[] = [
   {
     Icon: Users,
     value: "10,000+",
-    label: "Participants"
+    label: "Participants",
   },
   {
     Icon: Star,
     value: "3",
-    label: "Successful Seasons"
+    label: "Successful Seasons",
   },
   {
     Icon: MapPin,
     value: "20+",
-    label: "Districts Covered"
+    label: "Districts Covered",
   },
   {
     Icon: Music,
     value: "500+",
-    label: "Performances"
-  }
-]
+    label: "Performances",
+  },
+];
 
+// Data for categories section
 const categories: CategoryItem[] = [
   {
     Icon: Music,
     title: "Vocal Performance",
     description: "Showcase your singing talent across various genres and styles.",
-    features: [
-      "Classical Singing",
-      "Modern Contemporary",
-      "Folk Music",
-      "Fusion Performances"
-    ]
+    features: ["Classical Singing", "Modern Contemporary", "Folk Music", "Fusion Performances"],
   },
   {
     Icon: Users,
     title: "Dance",
     description: "Express yourself through traditional and contemporary dance forms.",
-    features: [
-      "Traditional Folk Dance",
-      "Classical Dance",
-      "Contemporary Styles",
-      "Group Performances"
-    ]
+    features: ["Traditional Folk Dance", "Classical Dance", "Contemporary Styles", "Group Performances"],
   },
   {
     Icon: Globe,
     title: "Cultural Arts",
     description: "Celebrate and showcase Sikkim's rich cultural heritage.",
-    features: [
-      "Traditional Instruments",
-      "Folk Art Forms",
-      "Cultural Performances",
-      "Heritage Showcase"
-    ]
-  }
-]
+    features: ["Traditional Instruments", "Folk Art Forms", "Cultural Performances", "Heritage Showcase"],
+  },
+];
 
+// Data for registration process section
 const process: ProcessItem[] = [
   {
     Icon: Users,
     title: "Register Online",
-    description: "Fill out the simple online registration form with your basic information and performance category."
+    description:
+      "Fill out the simple online registration form with your basic information and performance category.",
   },
   {
     Icon: Calendar,
     title: "Choose Audition Slot",
-    description: "Select your preferred audition date and venue from our multiple regional centers."
+    description: "Select your preferred audition date and venue from our multiple regional centers.",
   },
   {
     Icon: Star,
     title: "Prepare Performance",
-    description: "Get ready for your audition with our guidelines and preparation tips."
+    description: "Get ready for your audition with our guidelines and preparation tips.",
   },
   {
     Icon: Award,
     title: "Attend Audition",
-    description: "Showcase your talent in front of our expert panel of judges at your chosen venue."
-  }
-]
+    description: "Showcase your talent in front of our expert panel of judges at your chosen venue.",
+  },
+];
 
+// Main Component
 const Index = () => {
   return (
     <MainLayout>
-      <div className="relative min-h-screen">
+      <div className="relative bg-gradient-to-b from-gray-50 to-white">
         {/* Hero Section */}
-        <div className="relative h-[90vh] flex items-center justify-center px-4 overflow-hidden">
+        <div className="relative max-w-4xl mx-auto text-center py-24 px-4">
           <div className="absolute inset-0 -z-10">
-            <div className="absolute inset-0 bg-gradient-to-b from-black via-black/90 to-black" />
+            <div className="absolute inset-0 bg-gradient-to-b from-white/80 to-white" />
             <img 
               src="https://images.unsplash.com/photo-1506604900144-7360175909e2"
               alt="Sikkim Rising Star"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover object-center rounded-[3rem] opacity-30"
             />
           </div>
-          <FadeIn className="max-w-4xl mx-auto text-center">
-            <span className="inline-flex items-center gap-2 px-6 py-3 rounded-full neo-blur text-white text-sm font-medium mb-8">
+          <FadeIn>
+            <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/5 text-primary text-sm font-medium mb-6">
               <Star className="h-4 w-4" />
               Season 4 Registrations Open
             </span>
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-8 leading-tight">
+            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Discover Your <br />
-              <span className="text-gradient">Star Potential</span>
+              <span className="text-primary">Star Potential</span>
             </h1>
-            <p className="text-gray-300 text-lg md:text-xl mx-auto max-w-2xl mb-12">
+            <p className="text-gray-600 text-lg mx-auto max-w-2xl mb-8">
               Join Sikkim's premier talent hunt platform celebrating artistry, 
               culture, and entertainment since 2018.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/register">
-                <Button className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
-                  Register Now <ArrowRight className="ml-2 h-5 w-5" />
+                <Button className="bg-primary text-white hover:bg-primary/90 h-12 px-8 rounded-xl text-base">
+                  Register Now <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
               <Link to="/about">
-                <Button variant="outline" className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
+                <Button className="bg-white text-gray-900 hover:bg-gray-100 h-12 px-8 rounded-xl text-base border border-gray-200">
                   Learn More
                 </Button>
               </Link>
@@ -153,28 +165,28 @@ const Index = () => {
 
         <div className="container mx-auto px-4">
           {/* Stats Section */}
-          <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6 -mt-20 mb-32 relative z-10">
+          <div className="max-w-5xl mx-auto grid md:grid-cols-4 gap-8 mb-24">
             {stats.map((stat, index) => (
               <SlideIn 
                 key={index}
-                className="glass-morphism p-8 text-center rounded-2xl"
+                className="bg-white rounded-2xl p-6 text-center shadow-sm border border-gray-100"
                 delay={index * 0.1}
               >
-                <div className="bg-white/5 rounded-xl w-14 h-14 flex items-center justify-center mb-4 mx-auto">
-                  <stat.Icon className="h-7 w-7 text-white" />
+                <div className="bg-primary/5 rounded-xl w-12 h-12 flex items-center justify-center mb-4 mx-auto">
+                  <stat.Icon className="h-6 w-6 text-primary" />
                 </div>
-                <div className="text-4xl font-bold text-white mb-2">{stat.value}</div>
-                <div className="text-gray-400">{stat.label}</div>
+                <div className="text-3xl font-bold text-gray-900 mb-2">{stat.value}</div>
+                <div className="text-sm text-gray-600">{stat.label}</div>
               </SlideIn>
             ))}
           </div>
 
           {/* Categories Section */}
-          <div className="max-w-6xl mx-auto mb-32">
+          <div className="max-w-5xl mx-auto mb-24">
             <FadeIn className="text-center mb-16">
-              <span className="text-primary/80 font-medium">Performance Categories</span>
-              <h2 className="text-4xl font-bold mt-2 mb-4 text-gradient">Showcase Your Talent</h2>
-              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              <span className="text-primary font-medium">Performance Categories</span>
+              <h2 className="text-3xl font-bold mt-2 mb-4">Showcase Your Talent</h2>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 Multiple categories to express your artistic abilities and cultural heritage.
               </p>
             </FadeIn>
@@ -183,18 +195,18 @@ const Index = () => {
               {categories.map((category, index) => (
                 <SlideIn 
                   key={index}
-                  className="glass-morphism p-8 rounded-2xl group hover:bg-white/10 transition-all duration-300"
+                  className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
                   delay={index * 0.1}
                 >
-                  <div className="bg-white/5 rounded-xl w-14 h-14 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                    <category.Icon className="h-7 w-7 text-white" />
+                  <div className="bg-primary/5 rounded-xl w-12 h-12 flex items-center justify-center mb-6">
+                    <category.Icon className="h-6 w-6 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-3 text-white">{category.title}</h3>
-                  <p className="text-gray-400 mb-6">{category.description}</p>
-                  <ul className="space-y-3">
+                  <h3 className="text-xl font-semibold mb-3">{category.title}</h3>
+                  <p className="text-gray-600 mb-4">{category.description}</p>
+                  <ul className="space-y-2">
                     {category.features.map((feature, idx) => (
-                      <li key={idx} className="flex items-center gap-3 text-gray-300">
-                        <span className="w-1.5 h-1.5 bg-white rounded-full"></span>
+                      <li key={idx} className="flex items-center gap-2 text-gray-600">
+                        <span className="w-1.5 h-1.5 bg-primary rounded-full"></span>
                         {feature}
                       </li>
                     ))}
@@ -205,25 +217,26 @@ const Index = () => {
           </div>
 
           {/* Countdown Section */}
-          <div className="max-w-5xl mx-auto mb-32">
+          <div className="max-w-5xl mx-auto mb-24">
             <FadeIn className="text-center mb-16">
-              <span className="text-primary/80 font-medium">Next Season</span>
-              <h2 className="text-4xl font-bold mt-2 mb-4 text-gradient">Registration Closing Soon</h2>
-              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              <span className="text-primary font-medium">Next Season</span>
+              <h2 className="text-3xl font-bold mt-2 mb-4">Registration Closing Soon</h2>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 Don't miss your chance to participate in Season 4
               </p>
             </FadeIn>
-            <div className="glass-morphism p-12 rounded-3xl">
-              <CountdownTimer targetDate="2024-06-01" />
+            
+            <div className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100">
+              <CountdownTimer targetDate={new Date("2024-06-01")} />
             </div>
           </div>
 
           {/* Process Section */}
-          <div className="max-w-6xl mx-auto mb-32">
+          <div className="max-w-5xl mx-auto mb-24">
             <FadeIn className="text-center mb-16">
-              <span className="text-primary/80 font-medium">How It Works</span>
-              <h2 className="text-4xl font-bold mt-2 mb-4 text-gradient">Simple Registration Process</h2>
-              <p className="text-gray-400 text-lg max-w-3xl mx-auto">
+              <span className="text-primary font-medium">How It Works</span>
+              <h2 className="text-3xl font-bold mt-2 mb-4">Simple Registration Process</h2>
+              <p className="text-gray-600 text-lg max-w-3xl mx-auto">
                 Four easy steps to begin your journey with Sikkim Rising Star.
               </p>
             </FadeIn>
@@ -232,19 +245,19 @@ const Index = () => {
               {process.map((step, index) => (
                 <SlideIn 
                   key={index}
-                  className="glass-morphism p-8 rounded-2xl hover:bg-white/10 transition-all duration-300"
+                  className="bg-white rounded-2xl p-8 shadow-sm border border-gray-100"
                   delay={index * 0.1}
                 >
                   <div className="flex gap-6">
-                    <div className="bg-white/5 rounded-xl w-14 h-14 flex-shrink-0 flex items-center justify-center">
-                      <step.Icon className="h-7 w-7 text-white" />
+                    <div className="bg-primary/5 rounded-xl w-12 h-12 flex-shrink-0 flex items-center justify-center">
+                      <step.Icon className="h-6 w-6 text-primary" />
                     </div>
                     <div>
-                      <div className="inline-block glass-morphism px-4 py-1 rounded-full text-sm font-medium mb-4">
+                      <div className="inline-block bg-primary/10 text-primary rounded-full px-4 py-1 text-sm font-medium mb-4">
                         Step {index + 1}
                       </div>
-                      <h3 className="text-xl font-semibold mb-3 text-white">{step.title}</h3>
-                      <p className="text-gray-400">{step.description}</p>
+                      <h3 className="text-xl font-semibold mb-3">{step.title}</h3>
+                      <p className="text-gray-600">{step.description}</p>
                     </div>
                   </div>
                 </SlideIn>
@@ -253,15 +266,15 @@ const Index = () => {
           </div>
 
           {/* CTA Section */}
-          <div className="max-w-4xl mx-auto text-center pb-32">
+          <div className="max-w-4xl mx-auto text-center pb-24">
             <FadeIn>
-              <h2 className="text-4xl font-bold mb-6 text-gradient">Begin Your Journey Today</h2>
-              <p className="text-gray-400 text-lg mb-12 max-w-2xl mx-auto">
+              <h2 className="text-3xl font-bold mb-6">Begin Your Journey Today</h2>
+              <p className="text-gray-600 text-lg mb-8 max-w-2xl mx-auto">
                 Take the first step towards your dreams. Register now for Sikkim Rising Star Season 4 auditions.
               </p>
               <Link to="/register">
-                <Button className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
-                  Register for Auditions <ArrowRight className="ml-2 h-5 w-5" />
+                <Button className="bg-primary text-white hover:bg-primary/90 h-12 px-8 rounded-xl text-base">
+                  Register for Auditions <ArrowRight className="ml-2 h-4 w-4" />
                 </Button>
               </Link>
             </FadeIn>
@@ -269,7 +282,7 @@ const Index = () => {
         </div>
       </div>
     </MainLayout>
-  )
-}
+  );
+};
 
-export default Index
+export default Index;
