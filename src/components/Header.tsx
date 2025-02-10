@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { useState } from "react"
@@ -15,12 +16,12 @@ export const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="fixed w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100">
+    <header className="fixed w-full glass-morphism z-50">
       <nav className="container mx-auto px-4 flex items-center justify-between h-16">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2">
           <img src="/logo.png" alt="SRS Logo" className="h-8 w-auto" />
-          <span className="font-bold text-xl text-gray-900">SRS</span>
+          <span className="font-bold text-xl text-gradient">SRS</span>
         </Link>
 
         {/* Desktop Navigation */}
@@ -29,7 +30,7 @@ export const Header = () => {
             <Link
               key={item.name}
               to={item.href}
-              className="text-sm font-medium text-gray-600 hover:text-primary transition-colors"
+              className="text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               {item.name}
             </Link>
@@ -39,7 +40,7 @@ export const Header = () => {
         {/* Register Button (Desktop) */}
         <div className="hidden md:block">
           <Link to="/register">
-            <Button className="bg-primary text-white hover:bg-primary/90">
+            <Button className="glass-morphism hover:bg-white/10 text-white">
               Register Now
             </Button>
           </Link>
@@ -48,7 +49,7 @@ export const Header = () => {
         {/* Mobile Menu Button */}
         <button
           type="button"
-          className="md:hidden p-2 text-gray-600"
+          className="md:hidden p-2 text-gray-300"
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
         >
           {mobileMenuOpen ? (
@@ -61,13 +62,13 @@ export const Header = () => {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="md:hidden bg-white border-t border-gray-100">
+        <div className="md:hidden neo-blur">
           <div className="container mx-auto px-4 py-4 space-y-4">
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 to={item.href}
-                className="block text-base font-medium text-gray-600 hover:text-primary"
+                className="block text-base font-medium text-gray-300 hover:text-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -77,7 +78,7 @@ export const Header = () => {
               to="/register"
               onClick={() => setMobileMenuOpen(false)}
             >
-              <Button className="w-full bg-primary text-white hover:bg-primary/90">
+              <Button className="w-full glass-morphism hover:bg-white/10 text-white">
                 Register Now
               </Button>
             </Link>
