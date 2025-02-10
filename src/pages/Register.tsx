@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { useState } from "react"
@@ -149,7 +150,7 @@ const Register = () => {
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-primary text-white hover:bg-primary/90 h-12 rounded-xl text-base"
+                      className="w-full bg-white text-black hover:bg-gray-100 h-12 rounded-xl text-base border border-gray-200"
                     >
                       Submit Registration <Send className="ml-2 h-4 w-4" />
                     </Button>

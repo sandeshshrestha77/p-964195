@@ -1,4 +1,3 @@
-
 import React from "react"
 import { ArrowRight, Users, Star, Award, Sparkles, Target, Heart, Globe, Music, Calendar, MapPin } from "lucide-react"
 import { Button } from "@/components/ui/button"
@@ -139,12 +138,12 @@ const Index = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link to="/register">
-                <Button className="glass-morphism hover:bg-white/10 h-14 px-8 rounded-xl text-lg">
+                <Button className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
                   Register Now <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
               <Link to="/about">
-                <Button variant="outline" className="neo-blur text-white hover:bg-white/5 h-14 px-8 rounded-xl text-lg">
+                <Button variant="outline" className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
                   Learn More
                 </Button>
               </Link>
@@ -261,7 +260,7 @@ const Index = () => {
                 Take the first step towards your dreams. Register now for Sikkim Rising Star Season 4 auditions.
               </p>
               <Link to="/register">
-                <Button className="glass-morphism hover:bg-white/10 h-14 px-8 rounded-xl text-lg">
+                <Button className="bg-white text-black hover:bg-gray-100 h-14 px-8 rounded-xl text-lg border border-gray-200">
                   Register for Auditions <ArrowRight className="ml-2 h-5 w-5" />
                 </Button>
               </Link>
